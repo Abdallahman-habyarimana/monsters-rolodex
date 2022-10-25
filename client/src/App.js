@@ -13,17 +13,17 @@ const App = () => {
             <div className="job__description">
               <div className="job__description-top">
                 <span>Photosnap</span>
-                <ul className="job__description_list">
-                  <li className="job__description_item">NEW!</li>
-                  <li className="job__description_item">FEATURED</li>
+                <ul className="job__description-list">
+                  <li className="job__description-item">NEW!</li>
+                  <li className="job__description-item">FEATURED</li>
                 </ul>
               </div>
 
               <span className="job__titles">Junior frontend developer</span>
-              <ul>
-                <li>1d ago</li>
-                <li>Full time</li>
-                <li>USA only</li>
+              <ul className="job__description-ul">
+                <li className="job__description-li">1d ago</li>
+                <li className="job__description-li">Full time</li>
+                <li className="job__description-li">USA only</li>
               </ul>
             </div>
           </div>

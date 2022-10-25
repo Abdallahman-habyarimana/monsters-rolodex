@@ -11,23 +11,70 @@
 
 .job__item {
     width: 100%;
+    height: 15vh;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: relative;
     padding: 12px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .job__image {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    top: -15px;
-    left: 15px;
+    top: 15px;
+    left:20px;
+}
+
+.job__description {
+    display: flex;
+    flex-direction: column ;
+    margin: 20px 120px;
+    gap: 10px;
+}
+
+.job__description-top {
+    display: flex;
+    align-items: center;
+}
+
+.job__description-list {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.job__description-ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.job__description-li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--secondary-very-dark-color);
 }
 
 @media screen and (max-width: 768px) {
     .jobs__container {
         width: 100%;
     }
+
+    .job__item {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .job__image {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: -15px;
+        left: 15px;
+    }
+
+    
 }
