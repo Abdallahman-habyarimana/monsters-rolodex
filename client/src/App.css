@@ -7,17 +7,19 @@
 .jobs__container {
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .job__item {
     width: 100%;
-    height: 15vh;
+    height: 19vh;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: relative;
     padding: 12px;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .job__image {
@@ -29,8 +31,20 @@
 .job__description {
     display: flex;
     flex-direction: column ;
-    margin: 20px 120px;
-    gap: 10px;
+    margin: 16px 120px;
+    gap: 13px;
+}
+
+.job__description-title {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.job__titles {
+    font-size: 1.6rem;
+    color: #111;
+    font-weight: 700;
 }
 
 .job__description-top {
@@ -44,18 +58,69 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+    
+}
+
+.job__description-item {
+    padding: 10px;
+    color: #fff;
+    font-size: 1.6rem;
+    background: var(--primary-color);
+    border-radius: 17px;
+}
+
+.job__description-item:nth-child(2) {
+    background-color: #111;
 }
 
 .job__description-ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    
 }
 
 .job__description-li {
+    position: relative;
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--secondary-very-dark-color);
+}
+
+/* .job__description-li::before {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 3px;
+    top:90%;
+    right: 50px;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.job__description-li::before:first-child {
+    position: absolute;
+    content: "";
+    display: none;
+    background-color: none;
+} */
+
+.job__item-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.job__item-list_item {
+    font-size: 1.6rem;
+    background: var(--secondary-light-color);
+    color: var(--primary-color);
+    padding: 10px;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
@@ -68,6 +133,10 @@
         height: auto;
     }
 
+    .job__description {
+        margin: 50px 10px;
+    }
+
     .job__image {
         position: absolute;
         width: 50px;
@@ -76,5 +145,15 @@
         left: 15px;
     }
 
+    .job__description-ul::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: -20px;
+        left: 0;
+        background-color: var(--secondary-very-dark-color);
+        
+    }
     
 }
