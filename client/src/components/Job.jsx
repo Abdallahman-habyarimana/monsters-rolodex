@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const Job = ({ job }) => {
+const Job = ({ job, onFilter }) => {
     const { languages, tools } = job
     return(
       <>
@@ -33,13 +33,13 @@ const Job = ({ job }) => {
               </div>
             </div>
             <ul className="job__item-list">
-              <li className="job__item-list_item">{job.role}</li>
-              <li className="job__item-list_item">{job.level}</li>
+              <li className="job__item-list_item" onClick={() => onFilter(job.role)}>{job.role}</li>
+              <li className="job__item-list_item" onClick={() => onFilter(job.level)}>{job.level}</li>
               {
-                languages.map(lang => <li className="job__item-list_item">{lang}</li>)
+                languages.map(lang => <li className="job__item-list_item" key={lang} onClick={() => onFilter(lang)}>{lang}</li>)
               }
               {
-                tools.map(tool => <li className="job__item-list_item">{tool}</li>)
+                tools.map(tool => <li className="job__item-list_item" key={tool}  onClick={() => onFilter(tool)}>{tool}</li>)
               }
             </ul>
           </div>
