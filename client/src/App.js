@@ -7,24 +7,46 @@ import Job from './components/Job'
 
 
 const App = () => {
+  const [jobList, setJobList] = useState(jobs)
   const [filter, setFilter] = useState(false);
   const [filterArray, setFilterArray] = useState([]);
+  const [prevList, setPrevList] = useState([])
+
+  const handleFilterArray = (item) => {
+    setPrevList(jobList)
+    const newArray = 
+      jobList.filter(job => 
+        job.languages.includes(item) || 
+        job.role === item ||
+        job.level === item ||
+        job.tools.includes(item));
+    setJobList(newArray)
+  }
+
+  console.log(jobList.length)
 
   const handleAddToArray = (item) => {
     setFilter(true)
+    const checkExisting = filterArray.find(exist => exist === item)
+    if (checkExisting) return;
+    handleFilterArray(item)
     const newArray = [...filterArray, item];
     setFilterArray(newArray)
+    
   }
 
   const handleRemoveToArray = (item) => {
     const newArray = filterArray.filter(value => value !== item)
-      if(newArray.length === 0) handleClear()
-    setFilterArray(newArray)
+      if(newArray.length === 0) handleClear();
+      setJobList(prevList)
+    setFilterArray(newArray);
   }
 
   const handleClear = () => {
     setFilter(false)
-    setFilterArray([])
+    setFilterArray([]);
+    setPrevList([])
+    setJobList(jobs);
   }
   return (
     <div className="container">
@@ -47,7 +69,7 @@ const App = () => {
 
 
         {
-          jobs.map(job => <Job job={job} key={job.id} onFilter={handleAddToArray} />)
+          jobList.map(job => <Job job={job} key={job.id} onFilter={handleAddToArray} />)
         }
       </div>  
     </div>
