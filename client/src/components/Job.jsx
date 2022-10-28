@@ -17,7 +17,7 @@ const Job = ({ job, onFilter }) => {
                       
                     }
                     {
-                      job.featured && <li className="job__description-item">NEW!</li>
+                      job.featured && <li className="job__description-item">FEATURED!</li>
                       
                     }
                     
@@ -26,9 +26,9 @@ const Job = ({ job, onFilter }) => {
   
                 <span className="job__titles">{job.position}</span>
                 <ul className="job__description-ul">
-                  <li className="job__description-li">1d ago</li>
-                  <li className="job__description-li">Full time</li>
-                  <li className="job__description-li">USA only</li>
+                  <li className="job__description-li">{job.postedAt}</li>
+                  <li className="job__description-li">{job.contract}</li>
+                  <li className="job__description-li">{job.location}</li>
                 </ul>
               </div>
             </div>
