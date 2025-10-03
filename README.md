@@ -1,4 +1,4 @@
-# Frontend Mentor - Job listings with filtering
+# Frontend Mentor - Monsters-rolodex
 
 ![Design preview for the Job listings with filtering coding challenge](./design/desktop-preview.jpg)
 
@@ -18,7 +18,7 @@ You can use any tools you like to help you complete the challenge. So if you've 
 
 Your users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
+- View the optimal layout for the site depending on the device's screen size
 - See hover states for all interactive elements on the page
 - Filter job listings based on the categories
 
